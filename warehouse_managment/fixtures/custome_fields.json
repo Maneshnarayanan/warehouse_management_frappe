@@ -1,0 +1,56 @@
+[
+    {
+        "doctype": "Custom Field",
+        "dt": "Item",
+        "module": "Warehouse Managment",
+        "name": "default_warehouse",
+        "fieldname": "default_warehouse",
+        "fieldtype": "Link",
+        "options": "Warehouse",
+        "label": "Default Warehouse",
+        "insert_after": "allow_negative_stock"
+    },
+    {
+        "doctype": "Custom Field",
+        "dt": "User",
+        "module": "Warehouse Managment",
+        "name": "dflt_warehouse",
+        "fieldname": "dflt_warehouse",
+        "fieldtype": "Link",
+        "options": "Warehouse",
+        "label": "Default Warehouse",
+        "insert_after": "time_zone"
+    },{
+        "doctype": "Custom Field",
+        "dt": "User",
+        "module": "Warehouse Managment",
+        "name": "dflt_warehouse",
+        "fieldname": "dflt_warehouse",
+        "fieldtype": "Link",
+        "options": "Warehouse",
+        "label": "Default Warehouse",
+        "insert_after": "time_zone"
+    },
+    {
+        "doctype": "Custom Field",
+        "dt": "Stock Settings",
+        "module": "Warehouse Managment",
+        "name": "sb_stock_settings_picking",
+        "fieldname": "sb_stock_settings_picking",
+        "fieldtype": "Section Break",
+        "insert_after": "allow_from_pr",
+        "label": "Picking"
+    },
+    {
+        "doctype": "Custom Field",
+        "dt": "Stock Settings",
+        "module": "Warehouse Managment",
+        "name": "picking_based_on_default_warehouse",
+        "fieldname": "picking_based_on_default_warehouse",
+        "fieldtype": "Check",        
+        "label": "Picking Based on Default Warehouse",
+        "insert_after": "sb_stock_settings_picking"
+    }
+ 
+
+]

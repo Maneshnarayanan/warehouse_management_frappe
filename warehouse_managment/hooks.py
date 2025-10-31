@@ -26,7 +26,7 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/warehouse_managment/css/warehouse_managment.css"
-# app_include_js = "/assets/warehouse_managment/js/warehouse_managment.js"
+app_include_js = "/assets/warehouse_managment/js/picklist_notifier.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/warehouse_managment/css/warehouse_managment.css"
@@ -43,8 +43,11 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
-# doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
+doctype_js = {"Purchase Receipt" : "public/js/move_to_warehouse.js",
+              "Sales Order" : "public/js/create_picklist.js"}
+
+doctype_list_js = {"Pick List" : "public/js/create_delivery_note.js",
+                   }
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
@@ -136,14 +139,12 @@ app_license = "mit"
 # Document Events
 # ---------------
 # Hook on document methods and events
+doc_events = {
+    "Pick List": {
+        "on_update": "warehouse_managment.custom_methods.picklist_notifier.notify_creator"
+    }
+}
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
 
 # Scheduled Tasks
 # ---------------
