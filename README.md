@@ -2,32 +2,85 @@
 
 WareHouse Managment
 
-### Installation
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+Picklist Automation &
+Warehouse Movement
 
-```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app warehouse_managment
-```
 
-### Contributing
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+Introduction
+Warehouse operations often involve repetitive manual steps after purchase and sales processes. Currently, items received through purchase receipts need to be manually moved into their designated default warehouses. Similarly, when creating picklists from sales orders, warehouse staff manually distribute items across different warehouse zones. This consumes time, introduces errors, and reduces operational efficiency.
+The automation of these processes will streamline inventory handling, improve order fulfillment speed, and ensure accuracy in warehouse movements
 
-```bash
-cd apps/warehouse_managment
-pre-commit install
-```
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+Purpose
+Automate item transfer to default warehouses after purchase receipts.
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
 
-### License
+Automatically generate picklists from sales orders, distributed according to each item’s default warehouse zone.
 
-mit
+
+Minimize manual intervention to reduce errors and save processing time.
+
+Objectives
+Goals
+Automated Warehouse Movement:
+
+
+Upon submission of a Purchase Receipt, the system should automatically move items to their default warehouses without requiring manual stock entry.
+
+
+Picklist Automation:
+
+
+When a Sales Order is created, the system should generate picklists automatically.
+
+
+Items should be distributed into picklists based on their default warehouse zones.
+
+Solution Approach
+1. Automated Warehouse Movement (Post-Purchase Receipt)
+Trigger: Click on move to warehouse Button.
+
+
+Action: System checks each item’s default warehouse.
+
+
+Process: If the Purchase Receipt warehouse is different from the item’s default warehouse, the system creates a Stock Entry (Material Transfer) automatically.
+
+
+Result: Items are moved to their correct default warehouses without manual intervention.
+
+
+
+
+
+
+
+
+
+
+
+2. Picklist Automation (Post-Sales Order)
+Trigger: Submission of a Sales Order.
+
+
+Action: System fetches all items and identifies their respective default warehouse zones.
+Process:
+
+
+Group items warehouse-wise.
+
+
+Create separate Picklists for each warehouse zone.
+
+
+Send picklists to the correct printer based on warehouse mapping.
+
+
+Result:  Multiple picklists are generated instantly, each dedicated to a warehouse zone, and printed automatically at the correct warehouse.
+
+
+
+
+
